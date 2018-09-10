@@ -2,10 +2,10 @@
 	<div class="facet facet__title">
 		<p class="d-none d-lg-block">Filtros</p>
 		<div class="text-center" (click)="toggleMobileFacets()">
-			<span class="d-lg-none mobile__facet__container__title">Filtrar</span>
+			<span class="d-lg-none mobile__facet__container__title" [ngClass]="{'mobile__facet__container__collapsed' : hideMobileFacets}">Filtrar</span>
 		</div>
 
-		<div *ngFor="let facet of appliedFacets">
+		<div *ngFor="let facet of appliedFacets" [ngClass]="{'d-none' : hideMobileFacets}">
 			<div *ngIf="facet.active === true" class="d-flex align-items-center facet__applied" (click)="removeFilter(facet)">
 				<i class="material-icons">close</i> {{facet.name}}: {{facet.value}}
 			</div>

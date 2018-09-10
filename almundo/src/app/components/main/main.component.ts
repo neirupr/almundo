@@ -1,6 +1,5 @@
 "use strict"
-import { Component, Inject } from '@angular/core'
-import { SearchComponent } from '../search/search.component'
+import { Component } from '@angular/core'
 
 @Component({
 	selector: 'almundo',
@@ -10,16 +9,9 @@ import { SearchComponent } from '../search/search.component'
 export class MainComponent {
 	public imgSrc = ''
 
-	constructor(
-		@Inject(SearchComponent) private _search:SearchComponent){}
-
 	closeModal(input:boolean){
 		if(!input){
 			this.imgSrc=''
 		}
-	}
-
-	filterHotels(values:any){
-		this._search.appliedFacets = values
 	}
 }

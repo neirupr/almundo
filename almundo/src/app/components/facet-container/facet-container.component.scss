@@ -37,6 +37,11 @@
 		box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
 
 		border-bottom: 2px solid rgb(244,244,244);
+
+		@media(max-width: 991px){
+			border-bottom: none;
+			margin-bottom: 12px;
+		}
 	}
 
 	&__content{
@@ -135,11 +140,15 @@
 		color: $black_font;
 		font-size: 16px;
 		font-weight: bold;
+
+		@media(max-width: 991px){
+			padding: 8px 14px;
+		}
 	}
 }
 
-:host(.mobile__facet-container){
-	.mobile__facet__container__title{
+.mobile__facet__container{
+	&__title{
 		color: $blue_font;
 		position: relative;
 
@@ -154,6 +163,13 @@
 			width: 0;
 		    margin-left: 8px;
 		    bottom: 40%;
+		}
+	}
+
+	&__collapsed{
+		&:after{
+			border-width: 6px 6px 0 6px!important;
+			border-color: $blue_font transparent transparent transparent!important;
 		}
 	}
 }

@@ -85,7 +85,7 @@ export class FacetContainerComponent{
 		//Remove from applied facet list
 		this.appliedFacets = this.appliedFacets.filter( obj => obj !== facetObject)
 
-		facetObject.value = undefined
+		facetObject.value = ''
 		facetObject.active = false
 		
 		this.appliedFacets.push(facetObject)

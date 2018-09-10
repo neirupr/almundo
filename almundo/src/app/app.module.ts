@@ -33,7 +33,6 @@ import { ModalImgComponent } from './components/common/modal-img/modal-img.compo
 		appRoutingProviders,
 		HotelsService,
 		MainComponent,
-		SearchComponent
 	],
 	bootstrap: [MainComponent]
 })
