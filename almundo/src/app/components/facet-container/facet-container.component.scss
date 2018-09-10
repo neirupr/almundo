@@ -1,0 +1,159 @@
+@import '../../../assets/css/colors';
+@import '../../../assets/css/mixins';
+
+.facet{
+	background-color: $white;
+	margin: 4px 0;
+	padding: 14px; 
+	
+	&:first-child{
+		margin-top: 0;
+	}
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+
+	&__applied{
+		color: $blue_font;
+		font-size: 14px;
+		margin-top: 10px;
+
+		i{
+			color: $orange_font;
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		&:hover{
+			color: $black_font;
+			cursor: pointer;
+		}
+	}
+
+	&__container{
+		-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+		-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+		box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+
+		border-bottom: 2px solid rgb(244,244,244);
+	}
+
+	&__content{
+		display: none;
+	}
+
+	&__collapsed{
+		display: none;
+		margin-bottom: 0!important;
+		
+		&:not(.facet__name){
+			display: none!important;
+		}
+
+		&:hover{
+			&:after{
+				border-color: $black_font transparent transparent transparent!important;
+			}
+		}
+
+		&:after{
+			border-width: 6px 6px 0 6px!important;
+			border-color: $blue_font transparent transparent transparent!important;
+		}
+	}
+
+	&__name{
+		@include display-flex();
+		@include align-items(center);
+		color: $blue_font;
+		font-size: 14px;
+		font-weight: bold;
+		margin-bottom: 12px;
+		position: relative;
+
+		i{
+			margin-right: 4px;
+		}
+
+		&:hover{
+			color: $black_font;
+			cursor: pointer;
+
+			&:after{
+				border-color: transparent transparent $black_font transparent;
+			}
+		}
+
+		&:after{
+			content: "";
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 6px 6px 6px;
+			border-color: transparent transparent $blue_font transparent;
+			position: absolute;
+			right: 0;
+		}
+	}
+
+	&__rating{
+		&__option{
+			margin-top: 18px;
+		}
+
+		&__value{
+			font-size: 14px;
+			font-weight: bold;
+
+			.icon-star{
+				color: $yellow_font;
+			}
+
+			&:hover{
+				cursor: pointer;
+			}
+		}
+	}
+
+	&__search{
+		> form {
+			display: flex;
+
+			> input{
+				margin-right: 12px;
+				max-width: 65%;
+
+				@media(max-width: 992px){
+					max-width: initial;
+				}
+			}
+		}
+	}
+	
+	&__title{
+		color: $black_font;
+		font-size: 16px;
+		font-weight: bold;
+	}
+}
+
+:host(.mobile__facet-container){
+	.mobile__facet__container__title{
+		color: $blue_font;
+		position: relative;
+
+		&:after{		
+			border-color: transparent transparent $blue_font transparent;
+			border-style: solid;
+			border-width: 0 6px 6px 6px;
+			content: "";
+			height: 0;
+			left: 100%;
+			position: absolute;
+			width: 0;
+		    margin-left: 8px;
+		    bottom: 40%;
+		}
+	}
+}

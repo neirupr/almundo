@@ -1,0 +1,72 @@
+<div class="facet__container">
+	<div class="facet facet__title">
+		<p class="d-none d-lg-block">Filtros</p>
+		<div class="text-center" (click)="toggleMobileFacets()">
+			<span class="d-lg-none mobile__facet__container__title">Filtrar</span>
+		</div>
+
+		<div *ngFor="let facet of appliedFacets">
+			<div *ngIf="facet.active === true" class="d-flex align-items-center facet__applied" (click)="removeFilter(facet)">
+				<i class="material-icons">close</i> {{facet.name}}: {{facet.value}}
+			</div>
+		</div>
+	</div>
+
+	<div class="facet facet__search" [ngClass]="{'d-none' : hideMobileFacets, 'd-lg-block' : hideMobileFacets}">
+		<p class="facet__name" [ngClass]="{'facet__collapsed' : facetNameCollapsed}" (click)="toggleFacet('name')">
+			<i class="icon-search"></i>
+			<span>Nombre del hotel</span>
+		</p>
+
+		<form (ngSubmit)="filterHotels(searchText, 'name')" #filterByName="ngForm" class="justify-content-between" [ngClass]="{'facet__collapsed' : facetNameCollapsed}">
+			<input type="text" class="form-control" name="searchText" placeholder="Ingrese el nombre del hotel" [(ngModel)]="searchText">
+			<button type="submit" class="btn btn-almundo">Aceptar</button>
+		</form>
+	</div>
+
+	<div class="facet facet__rating" [ngClass]="{'d-none' : hideMobileFacets, 'd-lg-block' : displayMobileFacets}">
+		<p class="facet__name" [ngClass]="{'facet__collapsed' : facetRatingCollapsed}" (click)="toggleFacet('rating')">
+			<i class="icon-star"></i>
+			<span>Estrellas</span>
+		</p>
+
+		<div class="row" [ngClass]="{'facet__collapsed' : facetRatingCollapsed}">
+			<div class="col-12 d-flex align-items-center facet__rating__option">
+				<input type="radio" class="form-checkbox" name="filterByRating" [value]="all" id="all-stars" [(ngModel)]="stars">
+				<label for="all-stars" class="facet__rating__value d-flex align-items-center" (click)="filterHotels('all', 'stars')">Todas las estrellas</label>
+			</div>
+			<div class="col-12 d-flex align-items-center facet__rating__option">
+				<input type="radio" class="form-checkbox" name="filterByRating" [value]="5" id="5-stars" [(ngModel)]="stars">
+				<label for="5-stars" class="facet__rating__value d-flex align-items-center" (click)="filterHotels('5', 'stars')">
+					<i class="icon-star" *ngFor="let index of [1,2,3,4,5]"></i>
+				</label>
+			</div>
+
+			<div class="col-12 d-flex align-items-center facet__rating__option">
+				<input type="radio" class="form-checkbox" name="filterByRating" [value]="4" id="4-stars" [(ngModel)]="stars">
+				<label for="4-stars" class="facet__rating__value d-flex align-items-center" (click)="filterHotels('4', 'stars')">
+					<i class="icon-star" *ngFor="let index of [1,2,3,4]"></i>
+				</label>
+			</div>
+
+			<div class="col-12 d-flex align-items-center facet__rating__option">
+				<input type="radio" class="form-checkbox" name="filterByRating" [value]="3" id="3-stars" [(ngModel)]="stars">
+				<label for="3-stars" class="facet__rating__value d-flex align-items-center" (click)="filterHotels('3', 'stars')">
+					<i class="icon-star" *ngFor="let index of [1,2,3]"></i>
+				</label>
+			</div>
+
+			<div class="col-12 d-flex align-items-center facet__rating__option">
+				<input type="radio" class="form-checkbox" name="filterByRating" [value]="2" id="2-stars" [(ngModel)]="stars">
+				<label for="2-stars" class="facet__rating__value d-flex align-items-center" (click)="filterHotels('2', 'stars')">
+					<i class="icon-star" *ngFor="let index of [1,2]"></i>
+				</label>
+			</div>
+
+			<div class="col-12 d-flex align-items-center facet__rating__option">
+				<input type="radio" class="form-checkbox" name="filterByRating" [value]="1" id="1-star" [(ngModel)]="stars">
+				<label for="1-star" class="facet__rating__value d-flex align-items-center" (click)="filterHotels('1', 'stars')"><i class="icon-star"></i></label>
+			</div>
+		</div>
+	</div>
+</div>

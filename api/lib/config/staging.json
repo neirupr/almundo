@@ -1,0 +1,4 @@
+{
+	"database":"staging-database",
+	"cacheURL":"cache-url-staging"
+}

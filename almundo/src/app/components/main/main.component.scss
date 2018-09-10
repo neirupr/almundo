@@ -1,0 +1,25 @@
+@import '../../../assets/css/colors';
+
+.header{
+	background: $almundo_blue_strong;
+	background: -moz-linear-gradient(left, $almundo_blue_strong 0%, $almundo_blue_thin 50%, $almundo_blue_strong 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, $almundo_blue_strong), color-stop(50%, $almundo_blue_thin), color-stop(100%, $almundo_blue_strong));
+	background: -webkit-linear-gradient(left, $almundo_blue_strong 0%, $almundo_blue_thin 50%, $almundo_blue_strong 100%);
+	background: -o-linear-gradient(left, $almundo_blue_strong 0%, $almundo_blue_thin 50%, $almundo_blue_strong 100%);
+	background: -ms-linear-gradient(left, $almundo_blue_strong 0%, $almundo_blue_thin 50%, $almundo_blue_strong 100%);
+	background: linear-gradient(to right, $almundo_blue_strong 0%, $almundo_blue_thin 50%, $almundo_blue_strong 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#144380', endColorstr='#144380', GradientType=1 );
+	border-bottom: 2px solid rgb(61,102,146);
+}
+
+.section{
+	background-color: rgb(244,244,244);
+	min-height: 86.5vh;
+	padding-right: 1rem;
+	padding-left: 1rem;
+
+	@media (max-width: 991px){
+		padding-right: 0!important;
+		padding-left: 0!important;
+	}
+}

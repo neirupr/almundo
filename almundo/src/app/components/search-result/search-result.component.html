@@ -1,0 +1,37 @@
+<div class="hotel-result-page">
+	<div class="card hotel-result__data" *ngFor="let hotel of hotels">
+		<div class="row mr-0">
+			<div class="col-md-4 hotel-result__image" (click)="openModal(hotel.image)">
+				<img class="img-fluid" src="assets/images/hotels/{{hotel.image}}" alt="">
+			</div>
+			<div class="col-md-5">
+				<p class="hotel-result__name">{{hotel.name}}</p>
+				<p class="hotel-result__rating">
+					<i class="icon-star" [ngClass]="{'d-none' : 1 > hotel.stars}"></i>
+					<i class="icon-star" [ngClass]="{'d-none' : 2 > hotel.stars}"></i>
+					<i class="icon-star" [ngClass]="{'d-none' : 3 > hotel.stars}"></i>
+					<i class="icon-star" [ngClass]="{'d-none' : 4 > hotel.stars}"></i>
+					<i class="icon-star" [ngClass]="{'d-none' : 5 > hotel.stars}"></i>
+				</p>
+
+				<ul class="hotel-result__amenities d-flex px-0">
+					<li class="hotel-result__amenities__item" *ngFor="let amenity of hotel.amenities">
+						<i class="icon-{{amenity}}"></i>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-3 hotel-result__pricing">
+				<div class="flex-column align-center px-4 py-4">
+					<p class="hotel-result__price__label text-center px-1">Precio por noche por habitación</p>
+					<div class="hotel-result__price d-flex align-items-center justify-content-center">
+						<span class="hotel-result__price__currency">ARS</span>
+						<span class="hotel-result__price__total">{{hotel.price}}</span>
+					</div>
+
+					<button class="btn btn-almundo hotel-result__see-hotel">Ver hotel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="carousel-item" *ngFor="let slide of slides" [class.active]="slide.id === 0">
