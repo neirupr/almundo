@@ -13,9 +13,6 @@ export class SearchComponent implements OnChanges{
 	}
 
 	ngOnChanges(changes: SimpleChanges){
-		console.log("changing")
 		let values: SimpleChange = changes.appliedFacets;
-
-		console.log(values)
 	}
 }

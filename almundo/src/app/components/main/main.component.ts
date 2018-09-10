@@ -20,7 +20,6 @@ export class MainComponent {
 	}
 
 	filterHotels(values:any){
-		console.log(values)
 		this._search.appliedFacets = values
 	}
 }

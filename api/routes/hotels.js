@@ -36,7 +36,6 @@ router
 		})
 	}
 
-	console.log(filteredHotels)
 	if(req.query.stars){
 		let _stars = req.query.stars
 		if(_stars !== 'all'){
