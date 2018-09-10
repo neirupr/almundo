@@ -1,0 +1,65 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+almundo/dist
+almundo/tmp
+almundo/out-tsc
+
+# dependencies
+almundo/node_modules
+
+# IDEs and editors
+almundo/.idea
+almundo.project
+almundo.classpath
+almundo.c9/
+*.launch
+almundo.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+almundo.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+almundo/.sass-cache
+almundo/connect.lock
+almundo/coverage
+almundo/libpeerconnection.log
+almundonpm-debug.log
+almundoyarn-error.log
+almundotestem.log
+almundo/typings
+
+# System Files
+almundo.DS_Store
+almundoThumbs.db
+
+
+# OS X
+api/.DS_Store*
+api/Icon?
+api/._*
+
+# Windows
+api/api/Desktop.ini
+
+# Linux
+api/.directory
+*~
+
+
+# npm
+api/node_modules
+*.log
+*.gz
+
+
+# Coveralls
+api/coverage
+
+# Benchmarking
+api/benchmarks/graphs
